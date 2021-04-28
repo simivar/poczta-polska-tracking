@@ -1,0 +1,13 @@
+{
+    "name": "simivar/poczta-polska-webservices",
+    "description": "Library connecting with Polish state postal company Poczta Polska tracking webservices",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "simivar",
+            "email": "simivar@gmail.com"
+        }
+    ],
+    "require": {}
+}
