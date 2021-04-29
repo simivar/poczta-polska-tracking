@@ -3,9 +3,7 @@
 namespace Simivar\PocztaPolskaTracking;
 
 use Phpro\SoapClient\Client;
-use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
-use Phpro\SoapClient\Type\RequestInterface;
 use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentsInDateRangeResponse;
