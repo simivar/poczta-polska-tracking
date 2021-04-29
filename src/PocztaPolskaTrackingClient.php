@@ -7,7 +7,11 @@ use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
-use Simivar\PocztaPolskaTracking\Type\EmptyType;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\HelloResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\MaximumShipmentTrackingNumbersResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\VersionResponse;
+use Simivar\PocztaPolskaTracking\TranslatedType\Hello;
+use Simivar\PocztaPolskaTracking\TranslatedType\EmptyType;
 use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylke;
 use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkePl;
 use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkePlResponse;
@@ -21,18 +25,22 @@ use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiPl;
 use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiPlResponse;
 use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiResponse;
 use Simivar\PocztaPolskaTracking\Response\WersjaResponse;
-use Simivar\PocztaPolskaTracking\Type\Witaj;
 use Simivar\PocztaPolskaTracking\Response\WitajResponse;
 
 class PocztaPolskaTrackingClient extends Client
 {
     /**
-     * @return ResultInterface|WersjaResponse
+     * Returns the current version of WebService
+     * "wersja" WSDL action
+     *
      * @throws SoapException
      */
-    public function wersja(): WersjaResponse
+    public function version(): VersionResponse
     {
-        return $this->call('wersja', new EmptyType());
+        /** @var WersjaResponse $wersjaResponse */
+        $wersjaResponse = $this->call('wersja', new EmptyType());
+
+        return VersionResponse::fromWersjaResponse($wersjaResponse);
     }
 
     /**
@@ -66,12 +74,17 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
-     * @return ResultInterface|MaksymalnaLiczbaPrzesylekResponse
+     * Returns the maximum limit of tracking numbers available for checkPolishShipments() and checkExternalShipments()
+     * "maksymalnaLiczbaPrzesylek" WSDL action
+     *
      * @throws SoapException
      */
-    public function maksymalnaLiczbaPrzesylek(): MaksymalnaLiczbaPrzesylekResponse
+    public function maximumShipmentTrackingNumbers(): MaximumShipmentTrackingNumbersResponse
     {
-        return $this->call('maksymalnaLiczbaPrzesylek', new EmptyType());
+        /** @var MaksymalnaLiczbaPrzesylekResponse $maksymalnaLiczbaPrzesylekResponse */
+        $maksymalnaLiczbaPrzesylekResponse = $this->call('maksymalnaLiczbaPrzesylek', new EmptyType());
+
+        return MaximumShipmentTrackingNumbersResponse::fromMaksymalnaLiczbaPrzesylekResponse($maksymalnaLiczbaPrzesylekResponse);
     }
 
     /**
@@ -95,13 +108,17 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
-     * @param RequestInterface|Witaj $parameters
-     * @return ResultInterface|WitajResponse
+     * Action to test the proper parameter passing
+     * "witaj" WSDL action
+     *
      * @throws SoapException
      */
-    public function witaj(Witaj $parameters): WitajResponse
+    public function hello(Hello $parameters): HelloResponse
     {
-        return $this->call('witaj', $parameters);
+        /** @var WitajResponse $witajResponse */
+        $witajResponse = $this->call('witaj', $parameters);
+
+        return HelloResponse::fromWitajResponse($witajResponse);
     }
 
     /**
