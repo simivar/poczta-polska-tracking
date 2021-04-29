@@ -9,18 +9,18 @@ final class Jednostka
     private ?SzczDaneJednostki $daneSzczegolowe;
     private ?string $nazwa;
 
-    public function __construct(SzczDaneJednostki $daneSzczegolowe, string $nazwa)
+    public function __construct(?SzczDaneJednostki $daneSzczegolowe, ?string $nazwa)
     {
         $this->daneSzczegolowe = $daneSzczegolowe;
         $this->nazwa = $nazwa;
     }
 
-    public function getDaneSzczegolowe(): SzczDaneJednostki
+    public function getDaneSzczegolowe(): ?SzczDaneJednostki
     {
         return $this->daneSzczegolowe;
     }
 
-    public function withDaneSzczegolowe(SzczDaneJednostki $daneSzczegolowe): self
+    public function withDaneSzczegolowe(?SzczDaneJednostki $daneSzczegolowe): self
     {
         $new = clone $this;
         $new->daneSzczegolowe = $daneSzczegolowe;
@@ -28,12 +28,12 @@ final class Jednostka
         return $new;
     }
 
-    public function getNazwa(): string
+    public function getNazwa(): ?string
     {
         return $this->nazwa;
     }
 
-    public function withNazwa(string $nazwa): self
+    public function withNazwa(?string $nazwa): self
     {
         $new = clone $this;
         $new->nazwa = $nazwa;

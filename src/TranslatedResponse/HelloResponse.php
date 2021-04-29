@@ -7,6 +7,9 @@ namespace Simivar\PocztaPolskaTracking\TranslatedResponse;
 use Phpro\SoapClient\Type\ResultInterface;
 use Simivar\PocztaPolskaTracking\Response\WitajResponse;
 
+/**
+ * @see WitajResponse
+ */
 final class HelloResponse implements ResultInterface
 {
     private string $return;

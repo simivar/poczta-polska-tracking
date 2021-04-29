@@ -7,9 +7,21 @@ use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
 use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentsInDateRangeResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentsResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentsInDateRangeResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentsResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\HelloResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\MaximumShipmentTrackingNumbersResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\VersionResponse;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipment;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipments;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipmentsInDateRange;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipment;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipments;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsInDateRange;
 use Simivar\PocztaPolskaTracking\TranslatedType\Hello;
 use Simivar\PocztaPolskaTracking\TranslatedType\EmptyType;
 use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylke;
@@ -44,33 +56,36 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
-     * @param RequestInterface|SprawdzPrzesylkiPl $parameters
-     * @return ResultInterface|SprawdzPrzesylkiPlResponse
      * @throws SoapException
      */
-    public function sprawdzPrzesylkiPl(SprawdzPrzesylkiPl $parameters): SprawdzPrzesylkiPlResponse
+    public function checkPolishShipments(CheckPolishShipments $parameters): CheckPolishShipmentsResponse
     {
-        return $this->call('sprawdzPrzesylkiPl', $parameters);
+        /** @var SprawdzPrzesylkiPlResponse $sprawdzPrzesylkiPlResponse */
+        $sprawdzPrzesylkiPlResponse = $this->call('sprawdzPrzesylkiPl', SprawdzPrzesylkiPl::fromCheckPolishShipments($parameters));
+
+        return CheckPolishShipmentsResponse::fromSprawdzPrzesylkiPlResponse($sprawdzPrzesylkiPlResponse);
     }
 
     /**
-     * @param RequestInterface|SprawdzPrzesylkePl $parameters
-     * @return ResultInterface|SprawdzPrzesylkePlResponse
      * @throws SoapException
      */
-    public function sprawdzPrzesylkePl(SprawdzPrzesylkePl $parameters): SprawdzPrzesylkePlResponse
+    public function checkPolishShipment(CheckPolishShipment $parameters): CheckPolishShipmentResponse
     {
-        return $this->call('sprawdzPrzesylkePl', $parameters);
+        /** @var SprawdzPrzesylkePlResponse $sprawdzPrzesylkePlResponse */
+        $sprawdzPrzesylkePlResponse = $this->call('sprawdzPrzesylkePl', SprawdzPrzesylkePl::fromCheckPolishShipment($parameters));
+
+        return CheckPolishShipmentResponse::fromSprawdzPrzesylkePlResponse($sprawdzPrzesylkePlResponse);
     }
 
     /**
-     * @param RequestInterface|SprawdzPrzesylkiOdDo $parameters
-     * @return ResultInterface|SprawdzPrzesylkiOdDoResponse
      * @throws SoapException
      */
-    public function sprawdzPrzesylkiOdDo(SprawdzPrzesylkiOdDo $parameters): SprawdzPrzesylkiOdDoResponse
+    public function checkShipmentsInDateRange(CheckShipmentsInDateRange $parameters): CheckShipmentsInDateRangeResponse
     {
-        return $this->call('sprawdzPrzesylkiOdDo', $parameters);
+        /** @var SprawdzPrzesylkiOdDoResponse $sprawdzPrzesylkiOdDoResponse */
+        $sprawdzPrzesylkiOdDoResponse = $this->call('sprawdzPrzesylkiOdDo', SprawdzPrzesylkiOdDo::fromCheckShipmentsInDateRange($parameters));
+
+        return CheckShipmentsInDateRangeResponse::fromSprawdzPrzesylkiOdDoResponse($sprawdzPrzesylkiOdDoResponse);
     }
 
     /**
@@ -88,23 +103,25 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
-     * @param RequestInterface|SprawdzPrzesylke $parameters
-     * @return ResultInterface|SprawdzPrzesylkeResponse
      * @throws SoapException
      */
-    public function sprawdzPrzesylke(SprawdzPrzesylke $parameters): SprawdzPrzesylkeResponse
+    public function checkShipment(CheckShipment $parameters): CheckShipmentResponse
     {
-        return $this->call('sprawdzPrzesylke', $parameters);
+        /** @var SprawdzPrzesylkeResponse $sprawdzPrzesylkeResponse */
+        $sprawdzPrzesylkeResponse = $this->call('sprawdzPrzesylke', SprawdzPrzesylke::fromCheckShipment($parameters));
+
+        return CheckShipmentResponse::fromSprawdzPrzesylkeResponse($sprawdzPrzesylkeResponse);
     }
 
     /**
-     * @param RequestInterface|SprawdzPrzesylkiOdDoPl $parameters
-     * @return ResultInterface|SprawdzPrzesylkiOdDoPlResponse
      * @throws SoapException
      */
-    public function sprawdzPrzesylkiOdDoPl(SprawdzPrzesylkiOdDoPl $parameters): SprawdzPrzesylkiOdDoPlResponse
+    public function checkPolishShipmentsInDateRange(CheckPolishShipmentsInDateRange $parameters): CheckPolishShipmentsInDateRangeResponse
     {
-        return $this->call('sprawdzPrzesylkiOdDoPl', $parameters);
+        /** @var SprawdzPrzesylkiOdDoPlResponse $sprawdzPrzesylkiOdDoPlResponse */
+        $sprawdzPrzesylkiOdDoPlResponse = $this->call('sprawdzPrzesylkiOdDoPl', SprawdzPrzesylkiOdDoPl::fromCheckPolishShipmentsInDateRange($parameters));
+
+        return CheckPolishShipmentsInDateRangeResponse::fromSprawdzPrzesylkiOdDoPlResponse($sprawdzPrzesylkiOdDoPlResponse);
     }
 
     /**
@@ -122,12 +139,13 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
-     * @param RequestInterface|SprawdzPrzesylki $parameters
-     * @return ResultInterface|SprawdzPrzesylkiResponse
      * @throws SoapException
      */
-    public function sprawdzPrzesylki(SprawdzPrzesylki $parameters): SprawdzPrzesylkiResponse
+    public function checkShipments(CheckShipments $parameters): CheckShipmentsResponse
     {
-        return $this->call('sprawdzPrzesylki', $parameters);
+        /** @var SprawdzPrzesylkiResponse $sprawdzPrzesylkiResponse */
+        $sprawdzPrzesylkiResponse = $this->call('sprawdzPrzesylki', SprawdzPrzesylki::fromCheckShipments($parameters));
+
+        return CheckShipmentsResponse::fromSprawdzPrzesylkiResponse($sprawdzPrzesylkiResponse);
     }
 }

@@ -7,6 +7,9 @@ namespace Simivar\PocztaPolskaTracking\TranslatedResponse;
 use Phpro\SoapClient\Type\ResultInterface;
 use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
 
+/**
+ * @see MaksymalnaLiczbaPrzesylekResponse
+ */
 final class MaximumShipmentTrackingNumbersResponse implements ResultInterface
 {
     private int $return;

@@ -7,6 +7,9 @@ namespace Simivar\PocztaPolskaTracking\TranslatedResponse;
 use Phpro\SoapClient\Type\ResultInterface;
 use Simivar\PocztaPolskaTracking\Response\WersjaResponse;
 
+/**
+ * @see WersjaResponse
+ */
 final class VersionResponse implements ResultInterface
 {
     private string $return;

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Simivar\PocztaPolskaTracking\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipment;
 
 final class SprawdzPrzesylke implements RequestInterface
 {
@@ -26,5 +27,10 @@ final class SprawdzPrzesylke implements RequestInterface
         $new->numer = $numer;
 
         return $new;
+    }
+
+    public static function fromCheckShipment(CheckShipment $checkShipment): self
+    {
+        return new self($checkShipment->getTrackingNumber());
     }
 }

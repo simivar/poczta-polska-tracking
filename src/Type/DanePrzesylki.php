@@ -24,8 +24,23 @@ final class DanePrzesylki
     private bool $zakonczonoObsluge;
     private ListaZdarzen $zdarzenia;
 
-    public function __construct(DateTimeInterface $dataNadania, string $format, string $kodKrajuNadania, string $kodKrajuPrzezn, string $kodRodzPrzes, string $krajNadania, string $krajPrzezn, float $masa, string $numer, Procedura $proceduraSerwis, string $rodzPrzes, Jednostka $urzadNadania, Jednostka $urzadPrzezn, bool $zakonczonoObsluge, ListaZdarzen $zdarzenia)
-    {
+    public function __construct(
+        DateTimeInterface $dataNadania,
+        string $format,
+        string $kodKrajuNadania,
+        string $kodKrajuPrzezn,
+        string $kodRodzPrzes,
+        string $krajNadania,
+        string $krajPrzezn,
+        float $masa,
+        string $numer,
+        ?Procedura $proceduraSerwis,
+        string $rodzPrzes,
+        Jednostka $urzadNadania,
+        Jednostka $urzadPrzezn,
+        bool $zakonczonoObsluge,
+        ListaZdarzen $zdarzenia
+    ) {
         $this->dataNadania = $dataNadania;
         $this->format = $format;
         $this->kodKrajuNadania = $kodKrajuNadania;
@@ -160,12 +175,12 @@ final class DanePrzesylki
         return $new;
     }
 
-    public function getProceduraSerwis(): Procedura
+    public function getProceduraSerwis(): ?Procedura
     {
         return $this->proceduraSerwis;
     }
 
-    public function withProceduraSerwis(Procedura $proceduraSerwis): self
+    public function withProceduraSerwis(?Procedura $proceduraSerwis): self
     {
         $new = clone $this;
         $new->proceduraSerwis = $proceduraSerwis;

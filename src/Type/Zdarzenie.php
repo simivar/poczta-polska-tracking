@@ -13,7 +13,7 @@ final class Zdarzenie
     private string $nazwa;
     private ?Przyczyna $przyczyna;
 
-    public function __construct(string $czas, Jednostka $jednostka, string $kod, bool $konczace, string $nazwa, Przyczyna $przyczyna)
+    public function __construct(string $czas, Jednostka $jednostka, string $kod, bool $konczace, string $nazwa, ?Przyczyna $przyczyna)
     {
         $this->czas = $czas;
         $this->jednostka = $jednostka;
@@ -88,12 +88,12 @@ final class Zdarzenie
         return $new;
     }
 
-    public function getPrzyczyna(): Przyczyna
+    public function getPrzyczyna(): ?Przyczyna
     {
         return $this->przyczyna;
     }
 
-    public function withPrzyczyna(Przyczyna $przyczyna): self
+    public function withPrzyczyna(?Przyczyna $przyczyna): self
     {
         $new = clone $this;
         $new->przyczyna = $przyczyna;
