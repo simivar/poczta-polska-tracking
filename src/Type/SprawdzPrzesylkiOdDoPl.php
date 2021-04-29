@@ -8,23 +8,33 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 final class SprawdzPrzesylkiOdDoPl implements RequestInterface
 {
-    private string $numer;
+    /** @var string[] */
+    private array $numer;
     private string $odDnia;
     private string $doDnia;
 
-    public function __construct(string $numer, string $odDnia, string $doDnia)
+    /**
+     * @param string[] $numer
+     */
+    public function __construct(array $numer, string $odDnia, string $doDnia)
     {
         $this->numer = $numer;
         $this->odDnia = $odDnia;
         $this->doDnia = $doDnia;
     }
 
-    public function getNumer(): string
+    /**
+     * @return string[]
+     */
+    public function getNumer(): array
     {
         return $this->numer;
     }
 
-    public function withNumer(string $numer): self
+    /**
+     * @param string[] $numer
+     */
+    public function withNumer(array $numer): self
     {
         $new = clone $this;
         $new->numer = $numer;

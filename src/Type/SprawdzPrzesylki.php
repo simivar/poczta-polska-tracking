@@ -8,19 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 final class SprawdzPrzesylki implements RequestInterface
 {
-    private string $numer;
+    /** @var string[] */
+    private array $numer;
 
-    public function __construct(string $numer)
+    /**
+     * @param string[] $numer
+     */
+    public function __construct(array $numer)
     {
         $this->numer = $numer;
     }
 
-    public function getNumer(): string
+    /**
+     * @return string[]
+     */
+    public function getNumer(): array
     {
         return $this->numer;
     }
 
-    public function withNumer(string $numer): self
+    /**
+     * @param string[] $numer
+     */
+    public function withNumer(array $numer): self
     {
         $new = clone $this;
         $new->numer = $numer;

@@ -8,19 +8,29 @@ use Phpro\SoapClient\Type\RequestInterface;
 
 final class SprawdzPrzesylkiPl implements RequestInterface
 {
-    private string $numer;
+    /** @var string[] */
+    private array $numer;
 
-    public function __construct(string $numer)
+    /**
+     * @param string[] $numer
+     */
+    public function __construct(array $numer)
     {
         $this->numer = $numer;
     }
 
-    public function getNumer(): string
+    /**
+     * @return string[]
+     */
+    public function getNumer(): array
     {
         return $this->numer;
     }
 
-    public function withNumer(string $numer): SprawdzPrzesylkiPl
+    /**
+     * @param string[] $numer
+     */
+    public function withNumer(array $numer): SprawdzPrzesylkiPl
     {
         $new = clone $this;
         $new->numer = $numer;
