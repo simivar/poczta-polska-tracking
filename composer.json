@@ -13,8 +13,8 @@
         }
     ],
     "require": {
+        "php": ">=7.4",
         "ext-soap": "*",
-        "phpro/soap-client": "^1.4",
         "psr/http-message": "^1.0",
         "php-http/httplug": "^2.1",
         "php-http/message-factory": "^1.0",
@@ -28,5 +28,8 @@
         "psr-4": {
             "Simivar\\PocztaPolskaTracking\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpro/soap-client": "^1.4"
     }
 }
