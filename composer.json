@@ -1,6 +1,6 @@
 {
     "name": "simivar/poczta-polska-tracking",
-    "description": "Library connecting with Polish state postal company Poczta Polska tracking webservices",
+    "description": "Fully translated communication with tracking service of the Polish national postal service Poczta Polska",
     "type": "library",
     "license": "MIT",
     "keywords": [

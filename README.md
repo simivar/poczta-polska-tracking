@@ -1,6 +1,6 @@
 # Poczta Polska Tracking
 
-Library connecting with Polish state postal company Poczta Polska tracking webservices
+Fully translated communication with tracking service of the Polish national postal service Poczta Polska
 
 Currently supported version: 0.71
 
