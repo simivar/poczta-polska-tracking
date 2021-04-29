@@ -56,6 +56,9 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
+     * returns information about Shipments with details about Offices
+     * "sprawdzPrzesylkiPl" WSDL action
+     *
      * @throws SoapException
      */
     public function checkPolishShipments(CheckPolishShipments $parameters): CheckPolishShipmentsResponse
@@ -67,6 +70,9 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
+     * returns information about one Shipment without details about Offices
+     * "sprawdzPrzesylkePl" WSDL action
+     *
      * @throws SoapException
      */
     public function checkPolishShipment(CheckPolishShipment $parameters): CheckPolishShipmentResponse
@@ -78,6 +84,9 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
+     * returns information about Shipments with details about Offices
+     * "sprawdzPrzesylkiOdDo" WSDL action
+     *
      * @throws SoapException
      */
     public function checkShipmentsInDateRange(CheckShipmentsInDateRange $parameters): CheckShipmentsInDateRangeResponse
@@ -103,6 +112,9 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
+     * returns information about one Shipment with details about Offices
+     * "sprawdzPrzesylke" WSDL action
+     *
      * @throws SoapException
      */
     public function checkShipment(CheckShipment $parameters): CheckShipmentResponse
@@ -114,6 +126,9 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
+     * returns information about Shipments without details about Offices
+     * "sprawdzPrzesylkiOdDoPl" WSDL action
+     *
      * @throws SoapException
      */
     public function checkPolishShipmentsInDateRange(CheckPolishShipmentsInDateRange $parameters): CheckPolishShipmentsInDateRangeResponse
@@ -139,6 +154,9 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
+     * returns information about Shipments with details about Offices
+     * "sprawdzPrzesylki" WSDL action
+     *
      * @throws SoapException
      */
     public function checkShipments(CheckShipments $parameters): CheckShipmentsResponse
