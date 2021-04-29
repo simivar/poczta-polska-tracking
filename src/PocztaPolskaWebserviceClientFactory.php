@@ -12,8 +12,15 @@ use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 
 final class PocztaPolskaWebserviceClientFactory
 {
-    public static function factory(string $wsdl, string $userName = 'sledzeniepp', string $password = 'PPSA'): PocztaPolskaWebserviceClient
-    {
+    public const DEFAULT_WSDL_URL = 'https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie?wsdl';
+    public const DEFAULT_USERNAME = 'sledzeniepp';
+    public const DEFAULT_PASSWORD = 'PPSA';
+
+    public static function factory(
+        string $wsdl = self::DEFAULT_WSDL_URL,
+        string $userName = self::DEFAULT_USERNAME,
+        string $password = self::DEFAULT_PASSWORD
+    ): PocztaPolskaWebserviceClient {
         $handler = HttPlugHandle::createWithDefaultClient();
         $handler->addMiddleware(new UsernameTokenAuthentication($userName, $password));
 
