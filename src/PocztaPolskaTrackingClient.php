@@ -1,30 +1,30 @@
 <?php
 
-namespace Simivar\PocztaPolskaWebservice;
+namespace Simivar\PocztaPolskaTracking;
 
 use Phpro\SoapClient\Client;
 use Phpro\SoapClient\Type\ResultInterface;
 use Phpro\SoapClient\Exception\SoapException;
 use Phpro\SoapClient\Type\RequestInterface;
-use Simivar\PocztaPolskaWebservice\Response\MaksymalnaLiczbaPrzesylekResponse;
-use Simivar\PocztaPolskaWebservice\Type\EmptyType;
-use Simivar\PocztaPolskaWebservice\Type\SprawdzPrzesylke;
-use Simivar\PocztaPolskaWebservice\Type\SprawdzPrzesylkePl;
-use Simivar\PocztaPolskaWebservice\Response\SprawdzPrzesylkePlResponse;
-use Simivar\PocztaPolskaWebservice\Response\SprawdzPrzesylkeResponse;
-use Simivar\PocztaPolskaWebservice\Type\SprawdzPrzesylki;
-use Simivar\PocztaPolskaWebservice\Type\SprawdzPrzesylkiOdDo;
-use Simivar\PocztaPolskaWebservice\Type\SprawdzPrzesylkiOdDoPl;
-use Simivar\PocztaPolskaWebservice\Response\SprawdzPrzesylkiOdDoPlResponse;
-use Simivar\PocztaPolskaWebservice\Response\SprawdzPrzesylkiOdDoResponse;
-use Simivar\PocztaPolskaWebservice\Type\SprawdzPrzesylkiPl;
-use Simivar\PocztaPolskaWebservice\Response\SprawdzPrzesylkiPlResponse;
-use Simivar\PocztaPolskaWebservice\Response\SprawdzPrzesylkiResponse;
-use Simivar\PocztaPolskaWebservice\Response\WersjaResponse;
-use Simivar\PocztaPolskaWebservice\Type\Witaj;
-use Simivar\PocztaPolskaWebservice\Response\WitajResponse;
+use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
+use Simivar\PocztaPolskaTracking\Type\EmptyType;
+use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylke;
+use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkePl;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkePlResponse;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkeResponse;
+use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylki;
+use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiOdDo;
+use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiOdDoPl;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiOdDoPlResponse;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiOdDoResponse;
+use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiPl;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiPlResponse;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiResponse;
+use Simivar\PocztaPolskaTracking\Response\WersjaResponse;
+use Simivar\PocztaPolskaTracking\Type\Witaj;
+use Simivar\PocztaPolskaTracking\Response\WitajResponse;
 
-class PocztaPolskaWebserviceClient extends Client
+class PocztaPolskaTrackingClient extends Client
 {
     /**
      * @return ResultInterface|WersjaResponse

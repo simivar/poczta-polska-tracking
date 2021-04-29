@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simivar\PocztaPolskaWebservice\Response;
+namespace Simivar\PocztaPolskaTracking\Response;
 
 use Phpro\SoapClient\Type\ResultInterface;
 

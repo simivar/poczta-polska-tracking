@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Simivar\PocztaPolskaWebservice\Response;
+namespace Simivar\PocztaPolskaTracking\Response;
 
 use Phpro\SoapClient\Type\ResultInterface;
-use Simivar\PocztaPolskaWebservice\Type\Komunikat;
+use Simivar\PocztaPolskaTracking\Type\Komunikat;
 
 final class SprawdzPrzesylkiPlResponse implements ResultInterface
 {

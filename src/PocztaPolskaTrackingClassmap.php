@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Simivar\PocztaPolskaWebservice;
+namespace Simivar\PocztaPolskaTracking;
 
-use Simivar\PocztaPolskaWebservice\Type;
+use Simivar\PocztaPolskaTracking\Type;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 
-final class PocztaPolskaWebserviceClassmap
+final class PocztaPolskaTrackingClassmap
 {
     public static function getCollection(): ClassMapCollection
     {

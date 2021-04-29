@@ -1,8 +1,11 @@
 {
-    "name": "simivar/poczta-polska-webservices",
+    "name": "simivar/poczta-polska-tracking",
     "description": "Library connecting with Polish state postal company Poczta Polska tracking webservices",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "poczta polska", "shipment", "tracking", "soap", "wsdl", "sledzenie", "ppsa", "postal company"
+    ],
     "authors": [
         {
             "name": "simivar",
@@ -23,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Simivar\\PocztaPolskaWebservice\\": "src/"
+            "Simivar\\PocztaPolskaTracking\\": "src/"
         }
     }
 }

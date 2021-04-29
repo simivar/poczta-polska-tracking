@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Simivar\PocztaPolskaWebservice;
+namespace Simivar\PocztaPolskaTracking;
 
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
 use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
-use Simivar\PocztaPolskaWebservice\Middleware\UsernameTokenAuthentication;
+use Simivar\PocztaPolskaTracking\Middleware\UsernameTokenAuthentication;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 
-final class PocztaPolskaWebserviceClientFactory
+final class PocztaPolskaTrackingClientFactory
 {
     public const DEFAULT_WSDL_URL = 'https://tt.poczta-polska.pl/Sledzenie/services/Sledzenie?wsdl';
     public const DEFAULT_USERNAME = 'sledzeniepp';
@@ -20,17 +20,17 @@ final class PocztaPolskaWebserviceClientFactory
         string $wsdl = self::DEFAULT_WSDL_URL,
         string $userName = self::DEFAULT_USERNAME,
         string $password = self::DEFAULT_PASSWORD
-    ): PocztaPolskaWebserviceClient {
+    ): PocztaPolskaTrackingClient {
         $handler = HttPlugHandle::createWithDefaultClient();
         $handler->addMiddleware(new UsernameTokenAuthentication($userName, $password));
 
         $engine = ExtSoapEngineFactory::fromOptionsWithHandler(
             ExtSoapOptions::defaults($wsdl, [])
-                ->withClassMap(PocztaPolskaWebserviceClassmap::getCollection()),
+                ->withClassMap(PocztaPolskaTrackingClassmap::getCollection()),
             $handler
         );
         $eventDispatcher = new EventDispatcher();
 
-        return new PocztaPolskaWebserviceClient($engine, $eventDispatcher);
+        return new PocztaPolskaTrackingClient($engine, $eventDispatcher);
     }
 }

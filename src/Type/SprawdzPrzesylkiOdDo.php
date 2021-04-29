@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simivar\PocztaPolskaWebservice\Type;
+namespace Simivar\PocztaPolskaTracking\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 

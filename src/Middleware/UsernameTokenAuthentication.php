@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simivar\PocztaPolskaWebservice\Middleware;
+namespace Simivar\PocztaPolskaTracking\Middleware;
 
 use Http\Promise\Promise;
 use Phpro\SoapClient\Middleware\Middleware;
