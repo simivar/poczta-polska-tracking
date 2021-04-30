@@ -24,14 +24,6 @@ final class HelloResponse implements ResultInterface
         return $this->return;
     }
 
-    public function withReturn(string $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
-    }
-
     public static function fromWitajResponse(WitajResponse $witajResponse): self
     {
         return new self($witajResponse->getReturn());

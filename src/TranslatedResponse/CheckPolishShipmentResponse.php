@@ -10,24 +10,16 @@ use Simivar\PocztaPolskaTracking\TranslatedType\Shipment;
 
 final class CheckPolishShipmentResponse implements ResultInterface
 {
-    private Shipment $return;
+    private Shipment $shipment;
 
-    public function __construct(Shipment $return)
+    public function __construct(Shipment $shipment)
     {
-        $this->return = $return;
+        $this->shipment = $shipment;
     }
 
-    public function getReturn(): Shipment
+    public function getShipment(): Shipment
     {
-        return $this->return;
-    }
-
-    public function withReturn(Shipment $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
+        return $this->shipment;
     }
 
     public static function fromSprawdzPrzesylkePlResponse(SprawdzPrzesylkePlResponse $sprawdzPrzesylkeResponse): self

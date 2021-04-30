@@ -12,24 +12,16 @@ use Simivar\PocztaPolskaTracking\Response\WersjaResponse;
  */
 final class VersionResponse implements ResultInterface
 {
-    private string $return;
+    private string $version;
 
-    public function __construct(string $return)
+    public function __construct(string $version)
     {
-        $this->return = $return;
+        $this->version = $version;
     }
 
-    public function getReturn(): string
+    public function getVersion(): string
     {
-        return $this->return;
-    }
-
-    public function withReturn(string $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
+        return $this->version;
     }
 
     public static function fromWersjaResponse(WersjaResponse $wersjaResponse): self

@@ -12,7 +12,7 @@ use Simivar\PocztaPolskaTracking\PocztaPolskaTrackingClientFactory;
 require_once('vendor/autoload.php');
 
 $factory = PocztaPolskaTrackingClientFactory::factory();
-echo $factory->version()->getReturn(); // prints "tt 0.71"
+echo $factory->version()->getVersion(); // prints "tt 0.71"
 ```
 
 ## Available API

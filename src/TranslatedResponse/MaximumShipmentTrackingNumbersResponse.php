@@ -12,24 +12,16 @@ use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
  */
 final class MaximumShipmentTrackingNumbersResponse implements ResultInterface
 {
-    private int $return;
+    private int $maximumShipmentTrackingNumbers;
 
-    public function __construct(int $return)
+    public function __construct(int $maximumShipmentTrackingNumbers)
     {
-        $this->return = $return;
+        $this->maximumShipmentTrackingNumbers = $maximumShipmentTrackingNumbers;
     }
 
-    public function getReturn(): int
+    public function getMaximumShipmentTrackingNumbers(): int
     {
-        return $this->return;
-    }
-
-    public function withReturn(int $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
+        return $this->maximumShipmentTrackingNumbers;
     }
 
     public static function fromMaksymalnaLiczbaPrzesylekResponse(MaksymalnaLiczbaPrzesylekResponse $maksymalnaLiczbaPrzesylekResponse): self

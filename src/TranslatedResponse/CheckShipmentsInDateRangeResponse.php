@@ -15,24 +15,16 @@ use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiOdDo;
  */
 final class CheckShipmentsInDateRangeResponse implements ResultInterface
 {
-    private Message $return;
+    private Message $message;
 
-    public function __construct(Message $return)
+    public function __construct(Message $message)
     {
-        $this->return = $return;
+        $this->message = $message;
     }
 
-    public function getReturn(): Message
+    public function getMessage(): Message
     {
-        return $this->return;
-    }
-
-    public function withReturn(Message $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
+        return $this->message;
     }
 
     public static function fromSprawdzPrzesylkiOdDoResponse(SprawdzPrzesylkiOdDoResponse $sprawdzPrzesylkiOdDoResponse): self
