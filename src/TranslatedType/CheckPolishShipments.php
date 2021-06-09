@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Simivar\PocztaPolskaTracking\TranslatedType;
 
 use Phpro\SoapClient\Type\RequestInterface;
-use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylki;
 use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiPl;
 
 /**

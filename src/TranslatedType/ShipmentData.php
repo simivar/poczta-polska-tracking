@@ -7,7 +7,6 @@ namespace Simivar\PocztaPolskaTracking\TranslatedType;
 use DateTimeInterface;
 use Simivar\PocztaPolskaTracking\Type\DanePrzesylki;
 use Simivar\PocztaPolskaTracking\Type\Jednostka;
-use Simivar\PocztaPolskaTracking\Type\ListaZdarzen;
 
 /**
  * @see DanePrzesylki

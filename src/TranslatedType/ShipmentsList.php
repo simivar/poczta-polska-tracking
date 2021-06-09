@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking\TranslatedType;
 
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\InvalidTrackingNumberException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\NoEventsException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\OtherPackagesException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\PackageNotFoundException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\UnknownException;
 use Simivar\PocztaPolskaTracking\Type\ListaPrzesylek;
 
 /**
@@ -32,6 +37,13 @@ final class ShipmentsList
         return $this->shipments;
     }
 
+    /**
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
+     */
     public static function fromListaPrzesylek(ListaPrzesylek $listaPrzesylek): self
     {
         $przesylki = $listaPrzesylek->getPrzesylka();

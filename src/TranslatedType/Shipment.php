@@ -4,7 +4,13 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking\TranslatedType;
 
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\InvalidTrackingNumberException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\NoEventsException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\OtherPackagesException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\PackageNotFoundException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\UnknownException;
 use Simivar\PocztaPolskaTracking\Type\Przesylka;
+use Simivar\PocztaPolskaTracking\Validator\ShipmentStatusValidator;
 
 /**
  * @see Przesylka
@@ -37,8 +43,17 @@ final class Shipment
         return $this->status;
     }
 
+    /**
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
+     */
     public static function fromPrzesylka(Przesylka $przesylka): self
     {
+        ShipmentStatusValidator::validate($przesylka->getStatus());
+
         $shipmentData = null;
         if ($przesylka->getDanePrzesylki()) {
             $shipmentData = ShipmentData::fromDanePrzesylki($przesylka->getDanePrzesylki());

@@ -4,6 +4,11 @@ namespace Simivar\PocztaPolskaTracking;
 
 use Phpro\SoapClient\Client;
 use Phpro\SoapClient\Exception\SoapException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\InvalidTrackingNumberException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\NoEventsException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\OtherPackagesException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\PackageNotFoundException;
+use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\UnknownException;
 use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentsInDateRangeResponse;
@@ -58,6 +63,11 @@ class PocztaPolskaTrackingClient extends Client
      * "sprawdzPrzesylkiPl" WSDL action
      *
      * @throws SoapException
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
      */
     public function checkPolishShipments(CheckPolishShipments $parameters): CheckPolishShipmentsResponse
     {
@@ -72,6 +82,11 @@ class PocztaPolskaTrackingClient extends Client
      * "sprawdzPrzesylkePl" WSDL action
      *
      * @throws SoapException
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
      */
     public function checkPolishShipment(CheckPolishShipment $parameters): CheckPolishShipmentResponse
     {
@@ -86,6 +101,11 @@ class PocztaPolskaTrackingClient extends Client
      * "sprawdzPrzesylkiOdDo" WSDL action
      *
      * @throws SoapException
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
      */
     public function checkShipmentsInDateRange(CheckShipmentsInDateRange $parameters): CheckShipmentsInDateRangeResponse
     {
@@ -114,6 +134,11 @@ class PocztaPolskaTrackingClient extends Client
      * "sprawdzPrzesylke" WSDL action
      *
      * @throws SoapException
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
      */
     public function checkShipment(CheckShipment $parameters): CheckShipmentResponse
     {
@@ -128,6 +153,11 @@ class PocztaPolskaTrackingClient extends Client
      * "sprawdzPrzesylkiOdDoPl" WSDL action
      *
      * @throws SoapException
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
      */
     public function checkPolishShipmentsInDateRange(CheckPolishShipmentsInDateRange $parameters): CheckPolishShipmentsInDateRangeResponse
     {
@@ -156,6 +186,11 @@ class PocztaPolskaTrackingClient extends Client
      * "sprawdzPrzesylki" WSDL action
      *
      * @throws SoapException
+     * @throws InvalidTrackingNumberException
+     * @throws NoEventsException
+     * @throws OtherPackagesException
+     * @throws PackageNotFoundException
+     * @throws UnknownException
      */
     public function checkShipments(CheckShipments $parameters): CheckShipmentsResponse
     {
