@@ -17,7 +17,7 @@ final class Przesylka
         $this->status = $status;
     }
 
-    public function getDanePrzesylki(): DanePrzesylki
+    public function getDanePrzesylki(): ?DanePrzesylki
     {
         return $this->danePrzesylki;
     }
