@@ -34,40 +34,13 @@ final class CheckShipmentsInDateRange implements RequestInterface
         return $this->trackingNumbersList;
     }
 
-    /**
-     * @param string[] $numer
-     */
-    public function withNumer(array $numer): self
-    {
-        $new = clone $this;
-        $new->trackingNumbersList = $numer;
-
-        return $new;
-    }
-
     public function getFromDate(): string
     {
         return $this->fromDate;
     }
 
-    public function withOdDnia(string $odDnia): self
-    {
-        $new = clone $this;
-        $new->fromDate = $odDnia;
-
-        return $new;
-    }
-
     public function getToDate(): string
     {
         return $this->toDate;
-    }
-
-    public function withDoDnia(string $doDnia): self
-    {
-        $new = clone $this;
-        $new->toDate = $doDnia;
-
-        return $new;
     }
 }

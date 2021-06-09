@@ -21,14 +21,6 @@ final class SprawdzPrzesylke implements RequestInterface
         return $this->numer;
     }
 
-    public function withNumer(string $numer): self
-    {
-        $new = clone $this;
-        $new->numer = $numer;
-
-        return $new;
-    }
-
     public static function fromCheckShipment(CheckShipment $checkShipment): self
     {
         return new self($checkShipment->getTrackingNumber());

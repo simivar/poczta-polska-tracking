@@ -26,15 +26,4 @@ final class ListaZdarzen
     {
         return $this->zdarzenie;
     }
-
-    /**
-     * @param Zdarzenie[] $zdarzenie
-     */
-    public function withZdarzenie(array $zdarzenie): self
-    {
-        $new = clone $this;
-        $new->zdarzenie = $zdarzenie;
-
-        return $new;
-    }
 }

@@ -33,17 +33,6 @@ final class EventsList
         return $this->events;
     }
 
-    /**
-     * @param Event[] $events
-     */
-    public function withEvents(array $events): self
-    {
-        $new = clone $this;
-        $new->events = $events;
-
-        return $new;
-    }
-
     public static function fromListaZdarzen(ListaZdarzen $listaZdarzen): self
     {
         $listOfZdarzenie = $listaZdarzen->getZdarzenie();

@@ -33,25 +33,9 @@ final class Event
         return $this->dateTime;
     }
 
-    public function withDateTime(string $dateTime): self
-    {
-        $new = clone $this;
-        $new->dateTime = $dateTime;
-
-        return $new;
-    }
-
     public function getOffice(): Office
     {
         return $this->office;
-    }
-
-    public function withOffice(Office $office): self
-    {
-        $new = clone $this;
-        $new->office = $office;
-
-        return $new;
     }
 
     public function getCode(): string
@@ -59,25 +43,9 @@ final class Event
         return $this->code;
     }
 
-    public function withCode(string $code): self
-    {
-        $new = clone $this;
-        $new->code = $code;
-
-        return $new;
-    }
-
     public function isServiceCompleted(): bool
     {
         return $this->isServiceCompleted;
-    }
-
-    public function withIsServiceCompleted(bool $isServiceCompleted): self
-    {
-        $new = clone $this;
-        $new->isServiceCompleted = $isServiceCompleted;
-
-        return $new;
     }
 
     public function getName(): string
@@ -85,25 +53,9 @@ final class Event
         return $this->name;
     }
 
-    public function withName(string $name): self
-    {
-        $new = clone $this;
-        $new->name = $name;
-
-        return $new;
-    }
-
     public function getReason(): ?Reason
     {
         return $this->reason;
-    }
-
-    public function withReason(?Reason $reason): self
-    {
-        $new = clone $this;
-        $new->reason = $reason;
-
-        return $new;
     }
 
     public static function fromZdarzenie(Zdarzenie $zdarzenie): self

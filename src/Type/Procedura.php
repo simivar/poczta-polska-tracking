@@ -24,25 +24,9 @@ final class Procedura
         return $this->kod;
     }
 
-    public function withKod(string $kod): self
-    {
-        $new = clone $this;
-        $new->kod = $kod;
-
-        return $new;
-    }
-
     public function getKopertaFirmowa(): string
     {
         return $this->kopertaFirmowa;
-    }
-
-    public function withKopertaFirmowa(string $kopertaFirmowa): self
-    {
-        $new = clone $this;
-        $new->kopertaFirmowa = $kopertaFirmowa;
-
-        return $new;
     }
 
     public function getNazwa(): string
@@ -50,24 +34,8 @@ final class Procedura
         return $this->nazwa;
     }
 
-    public function withNazwa(string $nazwa): self
-    {
-        $new = clone $this;
-        $new->nazwa = $nazwa;
-
-        return $new;
-    }
-
     public function getPrzesylkiPowiazane(): ListaPrzesylekPowiazanych
     {
         return $this->przesylkiPowiazane;
-    }
-
-    public function withPrzesylkiPowiazane(ListaPrzesylekPowiazanych $przesylkiPowiazane): self
-    {
-        $new = clone $this;
-        $new->przesylkiPowiazane = $przesylkiPowiazane;
-
-        return $new;
     }
 }

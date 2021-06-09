@@ -32,25 +32,9 @@ final class SzczDaneJednostki
         return $this->dlGeogr;
     }
 
-    public function withDlGeogr(float $dlGeogr): self
-    {
-        $new = clone $this;
-        $new->dlGeogr = $dlGeogr;
-
-        return $new;
-    }
-
     public function getGodzinyPracy(): GodzinyPracy
     {
         return $this->godzinyPracy;
-    }
-
-    public function withGodzinyPracy(GodzinyPracy $godzinyPracy): self
-    {
-        $new = clone $this;
-        $new->godzinyPracy = $godzinyPracy;
-
-        return $new;
     }
 
     public function getMiejscowosc(): string
@@ -58,25 +42,9 @@ final class SzczDaneJednostki
         return $this->miejscowosc;
     }
 
-    public function withMiejscowosc(string $miejscowosc): self
-    {
-        $new = clone $this;
-        $new->miejscowosc = $miejscowosc;
-
-        return $new;
-    }
-
     public function getNrDomu(): string
     {
         return $this->nrDomu;
-    }
-
-    public function withNrDomu(string $nrDomu): self
-    {
-        $new = clone $this;
-        $new->nrDomu = $nrDomu;
-
-        return $new;
     }
 
     public function getNrLokalu(): string
@@ -84,25 +52,9 @@ final class SzczDaneJednostki
         return $this->nrLokalu;
     }
 
-    public function withNrLokalu(string $nrLokalu): self
-    {
-        $new = clone $this;
-        $new->nrLokalu = $nrLokalu;
-
-        return $new;
-    }
-
     public function getPna(): string
     {
         return $this->pna;
-    }
-
-    public function withPna(string $pna): self
-    {
-        $new = clone $this;
-        $new->pna = $pna;
-
-        return $new;
     }
 
     public function getSzerGeogr(): float
@@ -110,24 +62,8 @@ final class SzczDaneJednostki
         return $this->szerGeogr;
     }
 
-    public function withSzerGeogr(float $szerGeogr): self
-    {
-        $new = clone $this;
-        $new->szerGeogr = $szerGeogr;
-
-        return $new;
-    }
-
     public function getUlica(): string
     {
         return $this->ulica;
-    }
-
-    public function withUlica(string $ulica): self
-    {
-        $new = clone $this;
-        $new->ulica = $ulica;
-
-        return $new;
     }
 }

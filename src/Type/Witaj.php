@@ -19,12 +19,4 @@ final class Witaj implements RequestInterface
     {
         return $this->imie;
     }
-
-    public function withImie(string $imie): self
-    {
-        $new = clone $this;
-        $new->imie = $imie;
-
-        return $new;
-    }
 }

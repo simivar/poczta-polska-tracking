@@ -20,12 +20,4 @@ final class SprawdzPrzesylkePlResponse implements ResultInterface
     {
         return $this->return;
     }
-
-    public function withReturn(Przesylka $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
-    }
 }

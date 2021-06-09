@@ -26,15 +26,4 @@ final class ListaPrzesylekPowiazanych
     {
         return $this->przesylkaPowiazana;
     }
-
-    /**
-     * @param PrzesylkaPowiazana[] $przesylkaPowiazana
-     */
-    public function withPrzesylkaPowiazana(array $przesylkaPowiazana): self
-    {
-        $new = clone $this;
-        $new->przesylkaPowiazana = $przesylkaPowiazana;
-
-        return $new;
-    }
 }

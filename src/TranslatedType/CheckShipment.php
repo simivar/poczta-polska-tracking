@@ -23,12 +23,4 @@ final class CheckShipment implements RequestInterface
     {
         return $this->trackingNumber;
     }
-
-    public function withTrackingNumber(string $trackingNumber): self
-    {
-        $new = clone $this;
-        $new->trackingNumber = $trackingNumber;
-
-        return $new;
-    }
 }

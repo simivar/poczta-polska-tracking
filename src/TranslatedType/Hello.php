@@ -23,12 +23,4 @@ final class Hello implements RequestInterface
     {
         return $this->name;
     }
-
-    public function withName(string $name): self
-    {
-        $new = clone $this;
-        $new->name = $name;
-
-        return $new;
-    }
 }

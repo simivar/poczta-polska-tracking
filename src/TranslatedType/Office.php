@@ -25,25 +25,9 @@ final class Office
         return $this->officeData;
     }
 
-    public function withOfficeData(OfficeData $officeData): self
-    {
-        $new = clone $this;
-        $new->officeData = $officeData;
-
-        return $new;
-    }
-
     public function getName(): ?string
     {
         return $this->name;
-    }
-
-    public function withName(?string $name): self
-    {
-        $new = clone $this;
-        $new->name = $name;
-
-        return $new;
     }
 
     public static function fromJednostka(Jednostka $jednostka): self

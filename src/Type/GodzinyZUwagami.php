@@ -20,24 +20,8 @@ final class GodzinyZUwagami
         return $this->godziny;
     }
 
-    public function withGodziny(string $godziny): self
-    {
-        $new = clone $this;
-        $new->godziny = $godziny;
-
-        return $new;
-    }
-
     public function getUwagi(): string
     {
         return $this->uwagi;
-    }
-
-    public function withUwagi(string $uwagi): self
-    {
-        $new = clone $this;
-        $new->uwagi = $uwagi;
-
-        return $new;
     }
 }

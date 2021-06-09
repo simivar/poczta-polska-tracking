@@ -25,25 +25,9 @@ final class WorkingHoursWithComments
         return $this->workingHours;
     }
 
-    public function withWorkingHours(?string $workingHours): self
-    {
-        $new = clone $this;
-        $new->workingHours = $workingHours;
-
-        return $new;
-    }
-
     public function getComments(): ?string
     {
         return $this->comments;
-    }
-
-    public function withComments(?string $comments): self
-    {
-        $new = clone $this;
-        $new->comments = $comments;
-
-        return $new;
     }
 
     public static function fromGodzinyZUwagami(GodzinyZUwagami $godzinyZUwagami): self

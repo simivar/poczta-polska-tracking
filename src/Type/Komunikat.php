@@ -20,24 +20,8 @@ final class Komunikat
         return $this->przesylki;
     }
 
-    public function withPrzesylki(ListaPrzesylek $przesylki): self
-    {
-        $new = clone $this;
-        $new->przesylki = $przesylki;
-
-        return $new;
-    }
-
     public function getStatus(): int
     {
         return $this->status;
-    }
-
-    public function withStatus(int $status): self
-    {
-        $new = clone $this;
-        $new->status = $status;
-
-        return $new;
     }
 }
