@@ -28,38 +28,14 @@ final class Shipment
         return $this->shipmentData;
     }
 
-    public function withShipmentData(ShipmentData $danePrzesylki): self
-    {
-        $new = clone $this;
-        $new->shipmentData = $danePrzesylki;
-
-        return $new;
-    }
-
     public function getTrackingNumber(): string
     {
         return $this->trackingNumber;
     }
 
-    public function withNumer(string $numer): self
-    {
-        $new = clone $this;
-        $new->trackingNumber = $numer;
-
-        return $new;
-    }
-
     public function getStatus(): int
     {
         return $this->status;
-    }
-
-    public function withStatus(int $status): self
-    {
-        $new = clone $this;
-        $new->status = $status;
-
-        return $new;
     }
 
     public static function fromPrzesylka(Przesylka $przesylka): self

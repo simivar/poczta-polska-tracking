@@ -23,14 +23,6 @@ final class RelatedShipment
         return $this->trackingNumber;
     }
 
-    public function withTrackingNumber(string $trackingNumber): self
-    {
-        $new = clone $this;
-        $new->trackingNumber = $trackingNumber;
-
-        return $new;
-    }
-
     public static function fromPrzesylkaPowiazana(PrzesylkaPowiazana $przesylkaPowiazana)
     {
         return new self($przesylkaPowiazana->getNrPrzesylkiPowiazanej());

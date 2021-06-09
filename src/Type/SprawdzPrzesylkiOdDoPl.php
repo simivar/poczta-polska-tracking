@@ -32,41 +32,14 @@ final class SprawdzPrzesylkiOdDoPl implements RequestInterface
         return $this->numer;
     }
 
-    /**
-     * @param string[] $numer
-     */
-    public function withNumer(array $numer): self
-    {
-        $new = clone $this;
-        $new->numer = $numer;
-
-        return $new;
-    }
-
     public function getOdDnia(): string
     {
         return $this->odDnia;
     }
 
-    public function withOdDnia(string $odDnia): self
-    {
-        $new = clone $this;
-        $new->odDnia = $odDnia;
-
-        return $new;
-    }
-
     public function getDoDnia(): string
     {
         return $this->doDnia;
-    }
-
-    public function withDoDnia(string $doDnia): self
-    {
-        $new = clone $this;
-        $new->doDnia = $doDnia;
-
-        return $new;
     }
 
     public static function fromCheckPolishShipmentsInDateRange(CheckPolishShipmentsInDateRange $checkShipmentsInDateRange): self

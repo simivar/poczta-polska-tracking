@@ -20,12 +20,4 @@ final class SprawdzPrzesylkiOdDoResponse implements ResultInterface
     {
         return $this->return;
     }
-
-    public function withReturn(Komunikat $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
-    }
 }

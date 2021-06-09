@@ -20,24 +20,8 @@ final class Jednostka
         return $this->daneSzczegolowe;
     }
 
-    public function withDaneSzczegolowe(?SzczDaneJednostki $daneSzczegolowe): self
-    {
-        $new = clone $this;
-        $new->daneSzczegolowe = $daneSzczegolowe;
-
-        return $new;
-    }
-
     public function getNazwa(): ?string
     {
         return $this->nazwa;
-    }
-
-    public function withNazwa(?string $nazwa): self
-    {
-        $new = clone $this;
-        $new->nazwa = $nazwa;
-
-        return $new;
     }
 }

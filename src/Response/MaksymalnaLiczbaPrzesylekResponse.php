@@ -19,12 +19,4 @@ final class MaksymalnaLiczbaPrzesylekResponse implements ResultInterface
     {
         return $this->return;
     }
-
-    public function withReturn(int $return): self
-    {
-        $new = clone $this;
-        $new->return = $return;
-
-        return $new;
-    }
 }

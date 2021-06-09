@@ -26,15 +26,4 @@ final class ListaPrzesylek
     {
         return $this->przesylka;
     }
-
-    /**
-     * @param Przesylka[] $przesylka
-     */
-    public function withPrzesylka(array $przesylka): self
-    {
-        $new = clone $this;
-        $new->przesylka = $przesylka;
-
-        return $new;
-    }
 }

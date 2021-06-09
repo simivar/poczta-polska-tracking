@@ -20,25 +20,8 @@ final class Przyczyna
         return $this->kod;
     }
 
-    public function withKod(string $kod): self
-    {
-        $new = clone $this;
-        $new->kod = $kod;
-
-        return $new;
-    }
-
     public function getNazwa(): string
     {
         return $this->nazwa;
     }
-
-    public function withNazwa(string $nazwa): self
-    {
-        $new = clone $this;
-        $new->nazwa = $nazwa;
-
-        return $new;
-    }
 }
-

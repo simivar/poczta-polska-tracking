@@ -32,17 +32,6 @@ final class RelatedShipmentsList
         return $this->relatedShipments;
     }
 
-    /**
-     * @param RelatedShipment[] $relatedShipments
-     */
-    public function withRelatedShipments(array $relatedShipments): self
-    {
-        $new = clone $this;
-        $new->relatedShipments = $relatedShipments;
-
-        return $new;
-    }
-
     public static function fromListaPrzesylekPowiazanych(ListaPrzesylekPowiazanych $listaPrzesylekPowiazanych): self
     {
         $listOfPrzesylkaPowiazana = $listaPrzesylekPowiazanych->getPrzesylkaPowiazana();

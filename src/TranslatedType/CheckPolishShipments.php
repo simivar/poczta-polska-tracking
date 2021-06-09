@@ -31,15 +31,4 @@ final class CheckPolishShipments implements RequestInterface
     {
         return $this->trackingNumbersList;
     }
-
-    /**
-     * @param string[] $numer
-     */
-    public function withTrackingNumbersList(array $trackingNumbersList): self
-    {
-        $new = clone $this;
-        $new->trackingNumbersList = $trackingNumbersList;
-
-        return $new;
-    }
 }

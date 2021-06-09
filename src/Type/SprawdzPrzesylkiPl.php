@@ -28,17 +28,6 @@ final class SprawdzPrzesylkiPl implements RequestInterface
         return $this->numer;
     }
 
-    /**
-     * @param string[] $numer
-     */
-    public function withNumer(array $numer): SprawdzPrzesylkiPl
-    {
-        $new = clone $this;
-        $new->numer = $numer;
-
-        return $new;
-    }
-
     public static function fromCheckPolishShipments(CheckPolishShipments $checkShipments): self
     {
         return new self($checkShipments->getTrackingNumbersList());

@@ -29,25 +29,9 @@ final class ProceduraService
         return $this->code;
     }
 
-    public function withKod(string $kod): self
-    {
-        $new = clone $this;
-        $new->code = $kod;
-
-        return $new;
-    }
-
     public function getBusinessEnvelope(): string
     {
         return $this->businessEnvelope;
-    }
-
-    public function withKopertaFirmowa(string $kopertaFirmowa): self
-    {
-        $new = clone $this;
-        $new->businessEnvelope = $kopertaFirmowa;
-
-        return $new;
     }
 
     public function getName(): string
@@ -55,25 +39,9 @@ final class ProceduraService
         return $this->name;
     }
 
-    public function withNazwa(string $nazwa): self
-    {
-        $new = clone $this;
-        $new->name = $nazwa;
-
-        return $new;
-    }
-
     public function getRelatedShipmentsList(): RelatedShipmentsList
     {
         return $this->relatedShipmentsList;
-    }
-
-    public function withRelatedShipmentsList(RelatedShipmentsList $relatedShipmentsList): self
-    {
-        $new = clone $this;
-        $new->relatedShipmentsList = $relatedShipmentsList;
-
-        return $new;
     }
 
     public static function fromProcedura(Procedura $procedura): self

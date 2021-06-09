@@ -17,12 +17,4 @@ final class PrzesylkaPowiazana
     {
         return $this->nrPrzesylkiPowiazanej;
     }
-
-    public function withNrPrzesylkiPowiazanej(string $nrPrzesylkiPowiazanej): self
-    {
-        $new = clone $this;
-        $new->nrPrzesylkiPowiazanej = $nrPrzesylkiPowiazanej;
-
-        return $new;
-    }
 }

@@ -25,25 +25,9 @@ final class Reason
         return $this->code;
     }
 
-    public function withCode(string $code): self
-    {
-        $new = clone $this;
-        $new->code = $code;
-
-        return $new;
-    }
-
     public function getName(): string
     {
         return $this->name;
-    }
-
-    public function withName(string $name): self
-    {
-        $new = clone $this;
-        $new->name = $name;
-
-        return $new;
     }
 
     public static function fromPrzyczyna(Przyczyna $przyczyna): self

@@ -28,25 +28,9 @@ final class Zdarzenie
         return $this->czas;
     }
 
-    public function withCzas(string $czas): self
-    {
-        $new = clone $this;
-        $new->czas = $czas;
-
-        return $new;
-    }
-
     public function getJednostka(): Jednostka
     {
         return $this->jednostka;
-    }
-
-    public function withJednostka(Jednostka $jednostka): self
-    {
-        $new = clone $this;
-        $new->jednostka = $jednostka;
-
-        return $new;
     }
 
     public function getKod(): string
@@ -54,25 +38,9 @@ final class Zdarzenie
         return $this->kod;
     }
 
-    public function withKod(string $kod): self
-    {
-        $new = clone $this;
-        $new->kod = $kod;
-
-        return $new;
-    }
-
     public function isKonczace(): bool
     {
         return $this->konczace;
-    }
-
-    public function withKonczace(bool $konczace): self
-    {
-        $new = clone $this;
-        $new->konczace = $konczace;
-
-        return $new;
     }
 
     public function getNazwa(): string
@@ -80,24 +48,8 @@ final class Zdarzenie
         return $this->nazwa;
     }
 
-    public function withNazwa(string $nazwa): self
-    {
-        $new = clone $this;
-        $new->nazwa = $nazwa;
-
-        return $new;
-    }
-
     public function getPrzyczyna(): ?Przyczyna
     {
         return $this->przyczyna;
-    }
-
-    public function withPrzyczyna(?Przyczyna $przyczyna): self
-    {
-        $new = clone $this;
-        $new->przyczyna = $przyczyna;
-
-        return $new;
     }
 }
