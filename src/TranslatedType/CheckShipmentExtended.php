@@ -9,7 +9,7 @@ use Phpro\SoapClient\Type\RequestInterface;
 /**
  * @see SprawdzPrzesylkePl
  */
-final class CheckPolishShipment implements RequestInterface
+final class CheckShipmentExtended implements RequestInterface
 {
     private string $trackingNumber;
 

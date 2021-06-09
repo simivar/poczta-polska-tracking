@@ -10,7 +10,7 @@ use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiPl;
 /**
  * @see SprawdzPrzesylkiPl
  */
-final class CheckPolishShipments implements RequestInterface
+final class CheckShipmentsExtended implements RequestInterface
 {
     /** @var string[] */
     private array $trackingNumbersList;

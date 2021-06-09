@@ -13,7 +13,7 @@ use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\UnknownException;
 use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkePlResponse;
 use Simivar\PocztaPolskaTracking\TranslatedType\Shipment;
 
-final class CheckPolishShipmentResponse implements ResultInterface
+final class CheckShipmentExtendedResponse implements ResultInterface
 {
     private Shipment $shipment;
 

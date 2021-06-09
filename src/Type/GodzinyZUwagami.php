@@ -9,18 +9,18 @@ final class GodzinyZUwagami
     private ?string $godziny;
     private ?string $uwagi;
 
-    public function __construct(string $godziny, string $uwagi)
+    public function __construct(?string $godziny, ?string $uwagi)
     {
         $this->godziny = $godziny;
         $this->uwagi = $uwagi;
     }
 
-    public function getGodziny(): string
+    public function getGodziny(): ?string
     {
         return $this->godziny;
     }
 
-    public function getUwagi(): string
+    public function getUwagi(): ?string
     {
         return $this->uwagi;
     }

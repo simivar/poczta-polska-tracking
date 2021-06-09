@@ -10,13 +10,13 @@ use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\NoEventsException;
 use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\OtherPackagesException;
 use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\PackageNotFoundException;
 use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\UnknownException;
-use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiPlResponse;
+use Simivar\PocztaPolskaTracking\Response\SprawdzPrzesylkiOdDoPlResponse;
 use Simivar\PocztaPolskaTracking\TranslatedType\Message;
 
 /**
- * @see SprawdzPrzesylkiPlResponse
+ * @see SprawdzPrzesylkiOdDoPlResponse
  */
-final class CheckPolishShipmentsResponse implements ResultInterface
+final class CheckShipmentsInDateRangeExtendedResponse implements ResultInterface
 {
     private Message $message;
 
@@ -37,8 +37,8 @@ final class CheckPolishShipmentsResponse implements ResultInterface
      * @throws PackageNotFoundException
      * @throws UnknownException
      */
-    public static function fromSprawdzPrzesylkiPlResponse(SprawdzPrzesylkiPlResponse $sprawdzPrzesylkiPlResponse): self
+    public static function fromSprawdzPrzesylkiOdDoPlResponse(SprawdzPrzesylkiOdDoPlResponse $sprawdzPrzesylkiOdDoResponse): self
     {
-        return new self(Message::fromKomunikat($sprawdzPrzesylkiPlResponse->getReturn()));
+        return new self(Message::fromKomunikat($sprawdzPrzesylkiOdDoResponse->getReturn()));
     }
 }

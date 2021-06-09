@@ -37,22 +37,22 @@ final class SzczDaneJednostki
         return $this->godzinyPracy;
     }
 
-    public function getMiejscowosc(): string
+    public function getMiejscowosc(): ?string
     {
         return $this->miejscowosc;
     }
 
-    public function getNrDomu(): string
+    public function getNrDomu(): ?string
     {
         return $this->nrDomu;
     }
 
-    public function getNrLokalu(): string
+    public function getNrLokalu(): ?string
     {
         return $this->nrLokalu;
     }
 
-    public function getPna(): string
+    public function getPna(): ?string
     {
         return $this->pna;
     }
@@ -62,7 +62,7 @@ final class SzczDaneJednostki
         return $this->szerGeogr;
     }
 
-    public function getUlica(): string
+    public function getUlica(): ?string
     {
         return $this->ulica;
     }

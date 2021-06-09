@@ -10,7 +10,7 @@ use Simivar\PocztaPolskaTracking\Type\SprawdzPrzesylkiOdDoPl;
 /**
  * @see SprawdzPrzesylkiOdDoPl
  */
-final class CheckPolishShipmentsInDateRange implements RequestInterface
+final class CheckShipmentsInDateRangeExtended implements RequestInterface
 {
     /** @var string[] */
     private array $trackingNumbersList;

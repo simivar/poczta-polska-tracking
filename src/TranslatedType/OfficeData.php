@@ -23,12 +23,12 @@ final class OfficeData
     public function __construct(
         float $longitude,
         WorkingHours $workingHours,
-        string $city,
-        string $houseNumber,
-        string $apartmentNumber,
-        string $postalAddressNumber,
+        ?string $city,
+        ?string $houseNumber,
+        ?string $apartmentNumber,
+        ?string $postalAddressNumber,
         float $latitude,
-        string $street
+        ?string $street
     ) {
         $this->longitude = $longitude;
         $this->workingHours = $workingHours;
@@ -50,12 +50,12 @@ final class OfficeData
         return $this->workingHours;
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->city;
     }
 
-    public function getHouseNumber(): string
+    public function getHouseNumber(): ?string
     {
         return $this->houseNumber;
     }
@@ -65,7 +65,7 @@ final class OfficeData
         return $this->apartmentNumber;
     }
 
-    public function getPostalAddressNumber(): string
+    public function getPostalAddressNumber(): ?string
     {
         return $this->postalAddressNumber;
     }
@@ -75,7 +75,7 @@ final class OfficeData
         return $this->latitude;
     }
 
-    public function getStreet(): string
+    public function getStreet(): ?string
     {
         return $this->street;
     }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Simivar\PocztaPolskaTracking\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
-use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipmentsInDateRange;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsInDateRangeExtended;
 
 final class SprawdzPrzesylkiOdDoPl implements RequestInterface
 {
@@ -42,7 +42,7 @@ final class SprawdzPrzesylkiOdDoPl implements RequestInterface
         return $this->doDnia;
     }
 
-    public static function fromCheckPolishShipmentsInDateRange(CheckPolishShipmentsInDateRange $checkShipmentsInDateRange): self
+    public static function fromCheckShipmentsInDateRangeExtended(CheckShipmentsInDateRangeExtended $checkShipmentsInDateRange): self
     {
         return new self(
             $checkShipmentsInDateRange->getTrackingNumbersList(),

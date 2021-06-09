@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - **BC BREAK!** `TranslatedType/Shipment::construct()` methods accepts null in `$danePrzesylki` parameter
 - **BC BREAK!** Endpoints related to checking packages can throw `ShipmentStatus\*` exceptions
+- **BC BREAK!** All `Polish*` methods and classes  changed to `Extended*`
 
 ### Removed
 - **BC BREAK!** All `with*()` methods from Type and TranslatedType classes

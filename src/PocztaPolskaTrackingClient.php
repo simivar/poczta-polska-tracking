@@ -10,18 +10,18 @@ use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\OtherPackagesException
 use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\PackageNotFoundException;
 use Simivar\PocztaPolskaTracking\Exception\ShipmentStatus\UnknownException;
 use Simivar\PocztaPolskaTracking\Response\MaksymalnaLiczbaPrzesylekResponse;
-use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentResponse;
-use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentsInDateRangeResponse;
-use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckPolishShipmentsResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentExtendedResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentsInDateRangeExtendedResponse;
+use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentsExtendedResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentsInDateRangeResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\CheckShipmentsResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\HelloResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\MaximumShipmentTrackingNumbersResponse;
 use Simivar\PocztaPolskaTracking\TranslatedResponse\VersionResponse;
-use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipment;
-use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipments;
-use Simivar\PocztaPolskaTracking\TranslatedType\CheckPolishShipmentsInDateRange;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentExtended;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsExtended;
+use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsInDateRangeExtended;
 use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipment;
 use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipments;
 use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsInDateRange;
@@ -69,12 +69,12 @@ class PocztaPolskaTrackingClient extends Client
      * @throws PackageNotFoundException
      * @throws UnknownException
      */
-    public function checkPolishShipments(CheckPolishShipments $parameters): CheckPolishShipmentsResponse
+    public function checkShipmentsExtended(CheckShipmentsExtended $parameters): CheckShipmentsExtendedResponse
     {
         /** @var SprawdzPrzesylkiPlResponse $sprawdzPrzesylkiPlResponse */
-        $sprawdzPrzesylkiPlResponse = $this->call('sprawdzPrzesylkiPl', SprawdzPrzesylkiPl::fromCheckPolishShipments($parameters));
+        $sprawdzPrzesylkiPlResponse = $this->call('sprawdzPrzesylkiPl', SprawdzPrzesylkiPl::fromCheckShipmentsExtended($parameters));
 
-        return CheckPolishShipmentsResponse::fromSprawdzPrzesylkiPlResponse($sprawdzPrzesylkiPlResponse);
+        return CheckShipmentsExtendedResponse::fromSprawdzPrzesylkiPlResponse($sprawdzPrzesylkiPlResponse);
     }
 
     /**
@@ -88,12 +88,12 @@ class PocztaPolskaTrackingClient extends Client
      * @throws PackageNotFoundException
      * @throws UnknownException
      */
-    public function checkPolishShipment(CheckPolishShipment $parameters): CheckPolishShipmentResponse
+    public function checkShipmentExtended(CheckShipmentExtended $parameters): CheckShipmentExtendedResponse
     {
         /** @var SprawdzPrzesylkePlResponse $sprawdzPrzesylkePlResponse */
-        $sprawdzPrzesylkePlResponse = $this->call('sprawdzPrzesylkePl', SprawdzPrzesylkePl::fromCheckPolishShipment($parameters));
+        $sprawdzPrzesylkePlResponse = $this->call('sprawdzPrzesylkePl', SprawdzPrzesylkePl::fromCheckShipmentExtended($parameters));
 
-        return CheckPolishShipmentResponse::fromSprawdzPrzesylkePlResponse($sprawdzPrzesylkePlResponse);
+        return CheckShipmentExtendedResponse::fromSprawdzPrzesylkePlResponse($sprawdzPrzesylkePlResponse);
     }
 
     /**
@@ -116,7 +116,7 @@ class PocztaPolskaTrackingClient extends Client
     }
 
     /**
-     * Returns the maximum limit of tracking numbers available for checkPolishShipments() and checkExternalShipments()
+     * Returns the maximum limit of tracking numbers available for checkShipments*() methods
      * "maksymalnaLiczbaPrzesylek" WSDL action
      *
      * @throws SoapException
@@ -159,12 +159,12 @@ class PocztaPolskaTrackingClient extends Client
      * @throws PackageNotFoundException
      * @throws UnknownException
      */
-    public function checkPolishShipmentsInDateRange(CheckPolishShipmentsInDateRange $parameters): CheckPolishShipmentsInDateRangeResponse
+    public function checkShipmentsInDateRangeExtended(CheckShipmentsInDateRangeExtended $parameters): CheckShipmentsInDateRangeExtendedResponse
     {
         /** @var SprawdzPrzesylkiOdDoPlResponse $sprawdzPrzesylkiOdDoPlResponse */
-        $sprawdzPrzesylkiOdDoPlResponse = $this->call('sprawdzPrzesylkiOdDoPl', SprawdzPrzesylkiOdDoPl::fromCheckPolishShipmentsInDateRange($parameters));
+        $sprawdzPrzesylkiOdDoPlResponse = $this->call('sprawdzPrzesylkiOdDoPl', SprawdzPrzesylkiOdDoPl::fromCheckShipmentsInDateRangeExtended($parameters));
 
-        return CheckPolishShipmentsInDateRangeResponse::fromSprawdzPrzesylkiOdDoPlResponse($sprawdzPrzesylkiOdDoPlResponse);
+        return CheckShipmentsInDateRangeExtendedResponse::fromSprawdzPrzesylkiOdDoPlResponse($sprawdzPrzesylkiOdDoPlResponse);
     }
 
     /**
