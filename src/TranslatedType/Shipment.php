@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking\TranslatedType;
 
-use Simivar\PocztaPolskaTracking\Type\DanePrzesylki;
 use Simivar\PocztaPolskaTracking\Type\Przesylka;
 
 /**
@@ -16,19 +15,19 @@ final class Shipment
     private ?string $trackingNumber;
     private int $status;
 
-    public function __construct(ShipmentData $danePrzesylki, string $numer, int $status)
+    public function __construct(?ShipmentData $danePrzesylki, string $numer, int $status)
     {
         $this->shipmentData = $danePrzesylki;
         $this->trackingNumber = $numer;
         $this->status = $status;
     }
 
-    public function getShipmentData(): ShipmentData
+    public function getShipmentData(): ?ShipmentData
     {
         return $this->shipmentData;
     }
 
-    public function withShipmentData(ShipmentData $danePrzesylki): self
+    public function withShipmentData(?ShipmentData $danePrzesylki): self
     {
         $new = clone $this;
         $new->shipmentData = $danePrzesylki;
@@ -64,8 +63,13 @@ final class Shipment
 
     public static function fromPrzesylka(Przesylka $przesylka): self
     {
+        $shipmentData = null;
+        if ($przesylka->getDanePrzesylki()) {
+            $shipmentData = ShipmentData::fromDanePrzesylki($przesylka->getDanePrzesylki());
+        }
+
         return new self(
-            ShipmentData::fromDanePrzesylki($przesylka->getDanePrzesylki()),
+            $shipmentData,
             $przesylka->getNumer(),
             $przesylka->getStatus()
         );
