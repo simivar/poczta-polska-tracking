@@ -16,14 +16,14 @@ echo $factory->version()->getVersion(); // prints "tt 0.71"
 ```
 
 ## Available API
-| Client method                     | WSDL Action               | Description                                                                    |
-| --------------------------------- | ------------------------- | ------------------------------------------------------------------------------ |
-| version()                         | wersja                    | returns the current version of the Web Service                                 |
-| hello()                           | witaj                     | method for testing of parameter passing                                        |
-| maximumShipmentTrackingNumbers()  | maksymalnaLiczbaPrzesylek | returns maximum number of tracking numbers passed to checkShipments*() methods |
-| checkShipment()                   | sprawdzPrzesylke          | returns information about one Shipment with details about Offices              |
-| checkPolishShipment()             | sprawdzPrzesylkePl        | returns information about one Shipment without details about Offices           |
-| checkShipments()                  | sprawdzPrzesylki          | returns information about Shipments with details about Offices                 |
-| checkPolishShipments()            | sprawdzPrzesylkiPl        | returns information about Shipments without details about Offices              |
-| checkShipmentsInDateRange()       | sprawdzPrzesylkiOdDo      | returns information about Shipments with details about Offices                 |
-| checkPolishShipmentsInDateRange() | sprawdzPrzesylkiOdDoPl    | returns information about Shipments without details about Offices              |
+| Client method                       | WSDL Action               | Description                                                                    |
+| ----------------------------------- | ------------------------- | ------------------------------------------------------------------------------ |
+| version()                           | wersja                    | returns the current version of the Web Service                                 |
+| hello()                             | witaj                     | method for testing of parameter passing                                        |
+| maximumShipmentTrackingNumbers()    | maksymalnaLiczbaPrzesylek | returns maximum number of tracking numbers passed to checkShipments*() methods |
+| checkShipment()                     | sprawdzPrzesylke          | returns information about one Shipment with details about Offices              |
+| checkShipmentExtended()             | sprawdzPrzesylkePl        | returns information about one Shipment without details about Offices           |
+| checkShipments()                    | sprawdzPrzesylki          | returns information about Shipments with details about Offices                 |
+| checkShipmentsExtended()            | sprawdzPrzesylkiPl        | returns information about Shipments without details about Offices              |
+| checkShipmentsInDateRange()         | sprawdzPrzesylkiOdDo      | returns information about Shipments with details about Offices                 |
+| checkShipmentsInDateRangeExtended() | sprawdzPrzesylkiOdDoPl    | returns information about Shipments without details about Offices              |
