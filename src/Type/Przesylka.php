@@ -7,7 +7,7 @@ namespace Simivar\PocztaPolskaTracking\Type;
 final class Przesylka
 {
     private ?DanePrzesylki $danePrzesylki;
-    private ?string $numer;
+    private string $numer;
     private int $status;
 
     public function __construct(DanePrzesylki $danePrzesylki, string $numer, int $status)

@@ -113,7 +113,7 @@ final class ShipmentData
     /**
      * "Procedura" is the name of a service from Poczta Polska.
      */
-    public function getProceduraService(): ProceduraService
+    public function getProceduraService(): ?ProceduraService
     {
         return $this->proceduraService;
     }
@@ -146,7 +146,7 @@ final class ShipmentData
     public static function fromDanePrzesylki(DanePrzesylki $danePrzesylki): self
     {
         $proceduraService = null;
-        if ($danePrzesylki->getProceduraSerwis()) {
+        if ($danePrzesylki->getProceduraSerwis() !== null) {
             $proceduraService = ProceduraService::fromProcedura($danePrzesylki->getProceduraSerwis());
         }
 

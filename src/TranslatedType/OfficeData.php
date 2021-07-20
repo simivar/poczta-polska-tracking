@@ -60,7 +60,7 @@ final class OfficeData
         return $this->houseNumber;
     }
 
-    public function getApartmentNumber(): string
+    public function getApartmentNumber(): ?string
     {
         return $this->apartmentNumber;
     }

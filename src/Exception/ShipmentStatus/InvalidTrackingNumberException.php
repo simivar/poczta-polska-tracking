@@ -8,5 +8,6 @@ use Simivar\PocztaPolskaTracking\Exception\ShipmentStatusException;
 
 final class InvalidTrackingNumberException extends ShipmentStatusException
 {
+    /** @var string */
     protected $message = 'Tracking number is invalid';
 }

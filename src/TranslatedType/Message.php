@@ -16,7 +16,7 @@ use Simivar\PocztaPolskaTracking\Type\Komunikat;
  */
 final class Message
 {
-    private ?ShipmentsList $shipmentsList;
+    private ShipmentsList $shipmentsList;
     private int $status;
 
     public function __construct(ShipmentsList $shipmentsList, int $status)
@@ -44,6 +44,11 @@ final class Message
      */
     public static function fromKomunikat(Komunikat $komunikat): self
     {
-        return new self(ShipmentsList::fromListaPrzesylek($komunikat->getPrzesylki()), $komunikat->getStatus());
+        $shipmentsList = new ShipmentsList([]);
+        if ($komunikat->getPrzesylki() !== null) {
+            $shipmentsList = ShipmentsList::fromListaPrzesylek($komunikat->getPrzesylki());
+        }
+
+        return new self($shipmentsList, $komunikat->getStatus());
     }
 }

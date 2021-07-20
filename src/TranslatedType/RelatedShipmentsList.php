@@ -37,7 +37,7 @@ final class RelatedShipmentsList
         $listOfPrzesylkaPowiazana = $listaPrzesylekPowiazanych->getPrzesylkaPowiazana();
         $relatedShipments = [];
         foreach ($listOfPrzesylkaPowiazana as $przesylkaPowiazana) {
-            $relatedShipments = RelatedShipment::fromPrzesylkaPowiazana($przesylkaPowiazana);
+            $relatedShipments[] = RelatedShipment::fromPrzesylkaPowiazana($przesylkaPowiazana);
         }
 
         return new self($relatedShipments);
