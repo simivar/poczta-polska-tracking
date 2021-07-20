@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking;
 
-use Simivar\PocztaPolskaTracking\Type;
-use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
+use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 
 final class PocztaPolskaTrackingClassmap
 {
@@ -46,4 +45,3 @@ final class PocztaPolskaTrackingClassmap
         ]);
     }
 }
-

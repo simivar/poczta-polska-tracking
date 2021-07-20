@@ -111,7 +111,7 @@ final class ShipmentData
     }
 
     /**
-     * "Procedura" is the name of a service from Poczta Polska
+     * "Procedura" is the name of a service from Poczta Polska.
      */
     public function getProceduraService(): ProceduraService
     {
@@ -122,6 +122,7 @@ final class ShipmentData
     {
         return $this->typeOfDelivery;
     }
+
     public function getOriginOffice(): Jednostka
     {
         return $this->originOffice;

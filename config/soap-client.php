@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 use Laminas\Code\Generator\PropertyGenerator;
 use Phpro\SoapClient\CodeGenerator\Assembler;
 use Phpro\SoapClient\CodeGenerator\Assembler\ImmutableSetterAssemblerOptions;
-use Phpro\SoapClient\CodeGenerator\Rules;
 use Phpro\SoapClient\CodeGenerator\Config\Config;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
+use Phpro\SoapClient\CodeGenerator\Rules;
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
+use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 
 return Config::create()
     ->setEngine($engine = ExtSoapEngineFactory::fromOptions(

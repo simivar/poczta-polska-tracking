@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Simivar\PocztaPolskaTracking;
 
 use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapEngineFactory;
+use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 use Phpro\SoapClient\Soap\Handler\HttPlugHandle;
 use Simivar\PocztaPolskaTracking\Middleware\UsernameTokenAuthentication;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Phpro\SoapClient\Soap\Driver\ExtSoap\ExtSoapOptions;
 
 final class PocztaPolskaTrackingClientFactory
 {

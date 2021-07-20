@@ -31,7 +31,7 @@ final class UsernameTokenAuthentication extends Middleware
 
     public function beforeRequest(callable $handler, RequestInterface $request): Promise
     {
-        $xml = SoapXml::fromString((string)$request->getBody());
+        $xml = SoapXml::fromString((string) $request->getBody());
         $wsse = new WSSESoap($xml->getXmlDocument());
 
         $wsse->addUserToken($this->userTokenName, $this->userTokenPassword, self::TOKEN_DIGEST);
