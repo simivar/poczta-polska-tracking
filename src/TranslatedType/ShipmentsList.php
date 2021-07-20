@@ -47,7 +47,7 @@ final class ShipmentsList
     public static function fromListaPrzesylek(ListaPrzesylek $listaPrzesylek): self
     {
         $przesylki = $listaPrzesylek->getPrzesylka();
-        $shipments = [];
+        $shipments = array();
         foreach ($przesylki as $przesylka) {
             $shipments[] = Shipment::fromPrzesylka($przesylka);
         }
