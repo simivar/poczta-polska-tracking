@@ -61,7 +61,7 @@ final class Event
     public static function fromZdarzenie(Zdarzenie $zdarzenie): self
     {
         $reason = null;
-        if ($zdarzenie->getPrzyczyna()) {
+        if ($zdarzenie->getPrzyczyna() !== null) {
             $reason = Reason::fromPrzyczyna($zdarzenie->getPrzyczyna());
         }
 

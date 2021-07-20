@@ -18,7 +18,7 @@ use Simivar\PocztaPolskaTracking\Validator\ShipmentStatusValidator;
 final class Shipment
 {
     private ?ShipmentData $shipmentData;
-    private ?string $trackingNumber;
+    private string $trackingNumber;
     private int $status;
 
     public function __construct(?ShipmentData $danePrzesylki, string $numer, int $status)
@@ -55,7 +55,7 @@ final class Shipment
         ShipmentStatusValidator::validate($przesylka->getStatus());
 
         $shipmentData = null;
-        if ($przesylka->getDanePrzesylki()) {
+        if ($przesylka->getDanePrzesylki() !== null) {
             $shipmentData = ShipmentData::fromDanePrzesylki($przesylka->getDanePrzesylki());
         }
 

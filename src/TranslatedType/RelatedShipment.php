@@ -23,7 +23,7 @@ final class RelatedShipment
         return $this->trackingNumber;
     }
 
-    public static function fromPrzesylkaPowiazana(PrzesylkaPowiazana $przesylkaPowiazana)
+    public static function fromPrzesylkaPowiazana(PrzesylkaPowiazana $przesylkaPowiazana): self
     {
         return new self($przesylkaPowiazana->getNrPrzesylkiPowiazanej());
     }

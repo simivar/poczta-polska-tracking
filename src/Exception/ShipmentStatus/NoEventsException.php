@@ -8,5 +8,6 @@ use Simivar\PocztaPolskaTracking\Exception\ShipmentStatusException;
 
 final class NoEventsException extends ShipmentStatusException
 {
+    /** @var string */
     protected $message = 'There are no events for specified tracking number during chosen timespan';
 }

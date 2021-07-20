@@ -8,5 +8,6 @@ use Simivar\PocztaPolskaTracking\Exception\ShipmentStatusException;
 
 final class PackageNotFoundException extends ShipmentStatusException
 {
+    /** @var string */
     protected $message = 'There was no package with specified tracking number with events in the last 30 days';
 }

@@ -20,7 +20,7 @@ final class Office
         $this->name = $name;
     }
 
-    public function getOfficeData(): OfficeData
+    public function getOfficeData(): ?OfficeData
     {
         return $this->officeData;
     }
@@ -33,7 +33,7 @@ final class Office
     public static function fromJednostka(Jednostka $jednostka): self
     {
         $officeData = null;
-        if ($jednostka->getDaneSzczegolowe()) {
+        if ($jednostka->getDaneSzczegolowe() !== null) {
             $officeData = OfficeData::fromSzczDaneJednostki($jednostka->getDaneSzczegolowe());
         }
 
