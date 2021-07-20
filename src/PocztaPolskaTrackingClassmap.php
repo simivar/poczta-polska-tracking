@@ -7,6 +7,9 @@ namespace Simivar\PocztaPolskaTracking;
 use Phpro\SoapClient\Soap\ClassMap\ClassMap;
 use Phpro\SoapClient\Soap\ClassMap\ClassMapCollection;
 
+/**
+ * @internal
+ */
 final class PocztaPolskaTrackingClassmap
 {
     public static function getCollection(): ClassMapCollection

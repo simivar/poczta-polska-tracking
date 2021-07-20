@@ -7,6 +7,9 @@ namespace Simivar\PocztaPolskaTracking\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsExtended;
 
+/**
+ * @internal
+ */
 final class SprawdzPrzesylkiPl implements RequestInterface
 {
     /** @var string[] */

@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking\Type;
 
+/**
+ * @internal
+ */
 final class Przesylka
 {
     private ?DanePrzesylki $danePrzesylki;

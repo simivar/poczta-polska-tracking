@@ -6,6 +6,9 @@ namespace Simivar\PocztaPolskaTracking\Type;
 
 use Phpro\SoapClient\Type\RequestInterface;
 
+/**
+ * @internal
+ */
 final class Witaj implements RequestInterface
 {
     private string $imie;

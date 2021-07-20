@@ -7,6 +7,9 @@ namespace Simivar\PocztaPolskaTracking\Type;
 use Phpro\SoapClient\Type\RequestInterface;
 use Simivar\PocztaPolskaTracking\TranslatedType\CheckShipmentsInDateRangeExtended;
 
+/**
+ * @internal
+ */
 final class SprawdzPrzesylkiOdDoPl implements RequestInterface
 {
     /** @var string[] */

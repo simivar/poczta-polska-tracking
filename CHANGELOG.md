@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- PHPStan, PHPUnit and PHP-CS-Fixer GitHub Actions
+
+### Changed
+- All classes of `Type\*` namespace are now marked as `@internal`
+- `TranslatedType\Message::$shipmentsList` is not nullable anymore
+- `TranslatedType\Office::getOfficeData()` now has nullable return type
+- `TranslatedType\OfficeData::getApartmentNumber()` now has nullable return type
+- `TranslatedType\RelatedShipment::fromPrzesylkaPowiazana()` now has `self` return type
+- `TranslatedType\Shipment::$trackingNumber` is not nullable anymore
+- `TranslatedType\ShipmentData::getProceduraService()` now has nullable return type
+
+### Fixed
+- `TranslatedType/RelatedShipmentsList::fromListaPrzesylekPowiazanych` is now properly created with all related shipments
+
 ### Removed
 - Dependency on `php-http/guzzle7-adapter`
 

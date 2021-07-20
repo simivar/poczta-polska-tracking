@@ -6,6 +6,9 @@ namespace Simivar\PocztaPolskaTracking\Type;
 
 use DateTimeInterface;
 
+/**
+ * @internal
+ */
 final class DanePrzesylki
 {
     private DateTimeInterface $dataNadania;
