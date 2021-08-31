@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2021-07-20
+### Fixed
+- Check Shipment Data type-hints
+
 ## [0.2.0] - 2021-07-20
 ### Added
 - PHPStan, PHPUnit and PHP-CS-Fixer GitHub Actions

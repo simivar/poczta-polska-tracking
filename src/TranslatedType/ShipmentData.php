@@ -15,7 +15,7 @@ final class ShipmentData
 {
     private DateTimeInterface $dateOfPosting;
     /** @var string S|M|L */
-    private string $format;
+    private ?string $format;
     private string $originCountryCode;
     private string $destinationCountryCode;
     private string $originCountry;
@@ -25,7 +25,7 @@ final class ShipmentData
     private string $typeOfDelivery;
     private string $typeOfDeliveryCode;
     /** @var float In kilograms */
-    private float $weight;
+    private ?float $weight;
     private string $trackingNumber;
     private ?ProceduraService $proceduraService;
     private bool $isServiceCompleted;
@@ -33,13 +33,13 @@ final class ShipmentData
 
     public function __construct(
         DateTimeInterface $dateOfPosting,
-        string $format,
+        ?string $format,
         string $originCountryCode,
         string $destinationCountryCode,
         string $typeOfDeliveryCode,
         string $originCountry,
         string $destinationCountry,
-        float $weight,
+        ?float $weight,
         string $trackingNumber,
         ?ProceduraService $proceduraService,
         string $typeOfDelivery,

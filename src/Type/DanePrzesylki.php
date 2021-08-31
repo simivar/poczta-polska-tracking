@@ -12,13 +12,13 @@ use DateTimeInterface;
 final class DanePrzesylki
 {
     private DateTimeInterface $dataNadania;
-    private string $format;
+    private ?string $format;
     private string $kodKrajuNadania;
     private string $kodKrajuPrzezn;
     private string $kodRodzPrzes;
     private string $krajNadania;
     private string $krajPrzezn;
-    private float $masa;
+    private ?float $masa;
     private string $numer;
     private ?Procedura $proceduraSerwis;
     private string $rodzPrzes;
@@ -29,13 +29,13 @@ final class DanePrzesylki
 
     public function __construct(
         DateTimeInterface $dataNadania,
-        string $format,
+        ?string $format,
         string $kodKrajuNadania,
         string $kodKrajuPrzezn,
         string $kodRodzPrzes,
         string $krajNadania,
         string $krajPrzezn,
-        float $masa,
+        ?float $masa,
         string $numer,
         ?Procedura $proceduraSerwis,
         string $rodzPrzes,
@@ -66,7 +66,7 @@ final class DanePrzesylki
         return $this->dataNadania;
     }
 
-    public function getFormat(): string
+    public function getFormat(): ?string
     {
         return $this->format;
     }
@@ -96,7 +96,7 @@ final class DanePrzesylki
         return $this->krajPrzezn;
     }
 
-    public function getMasa(): float
+    public function getMasa(): ?float
     {
         return $this->masa;
     }
