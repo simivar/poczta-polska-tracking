@@ -6,7 +6,6 @@ namespace Simivar\PocztaPolskaTracking\TranslatedType;
 
 use DateTimeInterface;
 use Simivar\PocztaPolskaTracking\Type\DanePrzesylki;
-use Simivar\PocztaPolskaTracking\Type\Jednostka;
 
 /**
  * @see DanePrzesylki
@@ -20,8 +19,8 @@ final class ShipmentData
     private string $destinationCountryCode;
     private string $originCountry;
     private string $destinationCountry;
-    private Jednostka $originOffice;
-    private Jednostka $destinationOffice;
+    private Office $originOffice;
+    private Office $destinationOffice;
     private string $typeOfDelivery;
     private string $typeOfDeliveryCode;
     /** @var float In kilograms */
@@ -43,8 +42,8 @@ final class ShipmentData
         string $trackingNumber,
         ?ProceduraService $proceduraService,
         string $typeOfDelivery,
-        Jednostka $originOffice,
-        Jednostka $destinationOffice,
+        Office $originOffice,
+        Office $destinationOffice,
         bool $isServiceCompleted,
         EventsList $eventsList
     ) {
@@ -70,7 +69,7 @@ final class ShipmentData
         return $this->dateOfPosting;
     }
 
-    public function getFormat(): string
+    public function getFormat(): ?string
     {
         return $this->format;
     }
@@ -100,7 +99,7 @@ final class ShipmentData
         return $this->destinationCountry;
     }
 
-    public function getWeight(): float
+    public function getWeight(): ?float
     {
         return $this->weight;
     }
@@ -123,12 +122,12 @@ final class ShipmentData
         return $this->typeOfDelivery;
     }
 
-    public function getOriginOffice(): Jednostka
+    public function getOriginOffice(): Office
     {
         return $this->originOffice;
     }
 
-    public function getDestinationOffice(): Jednostka
+    public function getDestinationOffice(): Office
     {
         return $this->destinationOffice;
     }
@@ -162,8 +161,8 @@ final class ShipmentData
           $danePrzesylki->getNumer(),
           $proceduraService,
           $danePrzesylki->getRodzPrzes(),
-          $danePrzesylki->getUrzadNadania(),
-          $danePrzesylki->getUrzadPrzezn(),
+          Office::fromJednostka($danePrzesylki->getUrzadNadania()),
+          Office::fromJednostka($danePrzesylki->getUrzadPrzezn()),
           $danePrzesylki->isZakonczonoObsluge(),
           EventsList::fromListaZdarzen($danePrzesylki->getZdarzenia()),
         );
