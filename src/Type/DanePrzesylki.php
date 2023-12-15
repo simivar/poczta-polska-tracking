@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking\Type;
 
-use DateTimeInterface;
-
 /**
  * @internal
  */
 final class DanePrzesylki
 {
-    private DateTimeInterface $dataNadania;
+    private \DateTimeInterface $dataNadania;
     private ?string $format;
     private string $kodKrajuNadania;
     private string $kodKrajuPrzezn;
@@ -28,7 +26,7 @@ final class DanePrzesylki
     private ListaZdarzen $zdarzenia;
 
     public function __construct(
-        DateTimeInterface $dataNadania,
+        \DateTimeInterface $dataNadania,
         ?string $format,
         string $kodKrajuNadania,
         string $kodKrajuPrzezn,
@@ -61,7 +59,7 @@ final class DanePrzesylki
         $this->zdarzenia = $zdarzenia;
     }
 
-    public function getDataNadania(): DateTimeInterface
+    public function getDataNadania(): \DateTimeInterface
     {
         return $this->dataNadania;
     }
