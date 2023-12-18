@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Simivar\PocztaPolskaTracking\TranslatedType;
 
-use DateTimeInterface;
 use Simivar\PocztaPolskaTracking\Type\DanePrzesylki;
 
 /**
@@ -12,7 +11,7 @@ use Simivar\PocztaPolskaTracking\Type\DanePrzesylki;
  */
 final class ShipmentData
 {
-    private DateTimeInterface $dateOfPosting;
+    private \DateTimeInterface $dateOfPosting;
     /** @var string S|M|L */
     private ?string $format;
     private string $originCountryCode;
@@ -31,7 +30,7 @@ final class ShipmentData
     private EventsList $eventsList;
 
     public function __construct(
-        DateTimeInterface $dateOfPosting,
+        \DateTimeInterface $dateOfPosting,
         ?string $format,
         string $originCountryCode,
         string $destinationCountryCode,
@@ -64,7 +63,7 @@ final class ShipmentData
         $this->eventsList = $eventsList;
     }
 
-    public function getDateOfPosting(): DateTimeInterface
+    public function getDateOfPosting(): \DateTimeInterface
     {
         return $this->dateOfPosting;
     }
@@ -150,21 +149,21 @@ final class ShipmentData
         }
 
         return new self(
-          $danePrzesylki->getDataNadania(),
-          $danePrzesylki->getFormat(),
-          $danePrzesylki->getKodKrajuNadania(),
-          $danePrzesylki->getKodKrajuPrzezn(),
-          $danePrzesylki->getKodRodzPrzes(),
-          $danePrzesylki->getKrajNadania(),
-          $danePrzesylki->getKrajPrzezn(),
-          $danePrzesylki->getMasa(),
-          $danePrzesylki->getNumer(),
-          $proceduraService,
-          $danePrzesylki->getRodzPrzes(),
-          Office::fromJednostka($danePrzesylki->getUrzadNadania()),
-          Office::fromJednostka($danePrzesylki->getUrzadPrzezn()),
-          $danePrzesylki->isZakonczonoObsluge(),
-          EventsList::fromListaZdarzen($danePrzesylki->getZdarzenia()),
+            $danePrzesylki->getDataNadania(),
+            $danePrzesylki->getFormat(),
+            $danePrzesylki->getKodKrajuNadania(),
+            $danePrzesylki->getKodKrajuPrzezn(),
+            $danePrzesylki->getKodRodzPrzes(),
+            $danePrzesylki->getKrajNadania(),
+            $danePrzesylki->getKrajPrzezn(),
+            $danePrzesylki->getMasa(),
+            $danePrzesylki->getNumer(),
+            $proceduraService,
+            $danePrzesylki->getRodzPrzes(),
+            Office::fromJednostka($danePrzesylki->getUrzadNadania()),
+            Office::fromJednostka($danePrzesylki->getUrzadPrzezn()),
+            $danePrzesylki->isZakonczonoObsluge(),
+            EventsList::fromListaZdarzen($danePrzesylki->getZdarzenia()),
         );
     }
 }

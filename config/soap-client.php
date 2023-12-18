@@ -30,10 +30,10 @@ return Config::create()
         (new ImmutableSetterAssemblerOptions())->withTypeHints()->withReturnTypes()
     )))
     ->addRule(new Rules\AssembleRule(
-        (new Assembler\PropertyAssembler(PropertyGenerator::VISIBILITY_PRIVATE))
+        new Assembler\PropertyAssembler(PropertyGenerator::VISIBILITY_PRIVATE)
     ))
     ->addRule(new Rules\AssembleRule(
-        (new Assembler\FinalClassAssembler())
+        new Assembler\FinalClassAssembler()
     ))
     ->addRule(new Rules\AssembleRule(new Assembler\ConstructorAssembler(
         (new Assembler\ConstructorAssemblerOptions())->withTypeHints()->withDocBlocks(false)
